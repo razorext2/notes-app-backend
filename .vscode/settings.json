@@ -1,0 +1,6 @@
+{
+    "eslint.format.enable": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "bladeFormatter.format.indentSize": 2,
+    "editor.tabSize": 2
+}

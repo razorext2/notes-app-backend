@@ -23,7 +23,7 @@ const routes = (handler) => [
     method: 'DELETE',
     path: '/notes/{id}',
     handler: handler.deleteNoteByIdHandler,
-  }
+  },
 ];
 
 module.exports = routes;

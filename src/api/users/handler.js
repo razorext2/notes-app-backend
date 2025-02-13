@@ -1,4 +1,4 @@
-const ClientError = require('../exceptions/ClientError');
+const ClientError = require('../../exceptions/ClientError');
 
 class UsersHandler {
   constructor(service, validator) {
@@ -32,7 +32,6 @@ class UsersHandler {
 
     return {
       status: 'success',
-      message: 'Berhasil mengambil data user',
       data: {
         user,
       },

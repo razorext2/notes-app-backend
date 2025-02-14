@@ -4,12 +4,11 @@ require('dotenv').config();
 const Hapi = require('@hapi/hapi');
 const Jwt = require('@hapi/jwt');
 
-const ClientError = require('./exceptions/ClientError');
-
 // notes
 const notes = require('./api/notes');
 const NotesService = require('./services/postgres/NotesService');
 const NotesValidator = require('./validator/notes');
+const ClientError = require('./exceptions/ClientError');
 
 // users
 const users = require('./api/users');
@@ -37,13 +36,14 @@ const init = async () => {
     },
   });
 
+  // registrasi plugin eksternal
   await server.register([
     {
       plugin: Jwt,
     },
   ]);
 
-  // definisikan strategy autentikasi JWT
+  // mendefinisikan strategy autentikasi jwt
   server.auth.strategy('notesapp_jwt', 'jwt', {
     keys: process.env.ACCESS_TOKEN_KEY,
     verify: {

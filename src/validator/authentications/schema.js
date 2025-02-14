@@ -16,5 +16,5 @@ const DeleteAuthenticationPayloadSchema = Joi.object({
 module.exports = {
   PostAuthenticationPayloadSchema,
   PutAuthenticationPayloadSchema,
-  DeleteAuthenticationPayloadSchema
+  DeleteAuthenticationPayloadSchema,
 };

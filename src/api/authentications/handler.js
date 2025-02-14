@@ -26,10 +26,9 @@ class AuthenticationsHandler {
       message: 'Authentication berhasil ditambahkan',
       data: {
         accessToken,
-        refreshToken
+        refreshToken,
       },
     });
-
     response.code(201);
     return response;
   }
@@ -42,10 +41,9 @@ class AuthenticationsHandler {
     const { id } = this._tokenManager.verifyRefreshToken(refreshToken);
 
     const accessToken = this._tokenManager.generateAccessToken({ id });
-
     return {
       status: 'success',
-      message: 'Access token berhasil diperbarui',
+      message: 'Access Token berhasil diperbarui',
       data: {
         accessToken,
       },
@@ -57,12 +55,11 @@ class AuthenticationsHandler {
 
     const { refreshToken } = request.payload;
     await this._authenticationsService.verifyRefreshToken(refreshToken);
-
     await this._authenticationsService.deleteRefreshToken(refreshToken);
 
     return {
       status: 'success',
-      message: 'Access token berhasil dihapus.',
+      message: 'Refresh token berhasil dihapus',
     };
   }
 }

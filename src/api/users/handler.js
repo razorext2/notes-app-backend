@@ -42,7 +42,7 @@ class UsersHandler {
   async getUsersByUsernameHandler(request, h) {
     try {
       const { username = '' } = request.query;
-      const users = await this._service.getUsersByUsernameHandler(username);
+      const users = await this._service.getUsersByUsername(username);
 
       return {
         status: 'success',
